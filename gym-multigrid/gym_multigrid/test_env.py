@@ -1,4 +1,4 @@
-import gym
+import gymnasium
 import time
 from gym.envs.registration import register
 import argparse

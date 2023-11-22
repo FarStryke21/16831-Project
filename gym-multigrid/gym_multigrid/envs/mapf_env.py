@@ -25,7 +25,7 @@ class MapfEnv(MultiGridEnv):
         # map_file_path=None,
         # agent_file_path=None,
         # task_file_path=None,
-        scenario_file=None,
+        scenario_file="mingrid-envs/warehouse.domain/warehouse_small_10.json",
     ):
         self.num_agents = None
         self.size = None

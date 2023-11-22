@@ -1,8 +1,10 @@
 from typing import Callable, Optional
 
-import gymnasium as gym
-from gymnasium.envs.registration import register
-# from gym.envs.registration import register
+# import gymnasium as gym
+# from gymnasium.envs.registration import register
+from gym.envs.registration import register
+import gym
+
 from rl_zoo3.wrappers import MaskVelocityWrapper
 
 import rl_zoo3.gym_multigrid.mapf_env_test as MapfEnv

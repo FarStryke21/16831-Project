@@ -1,4 +1,4 @@
-import gym
+import gym as gym
 import time
 from gym.envs.registration import register
 import argparse
@@ -11,10 +11,10 @@ args = parser.parse_args()
 
 def main():
     if args.env == "mapf":
-        # register(
-        #     id="multigrid-mapf-v0",
-        #     entry_point="gym_multigrid.envs:MapfEnv",
-        # )
+        register(
+            id="multigrid-mapf-v0",
+            entry_point="gym_multigrid.envs:MapfEnv",
+        )
         # env = gym.make("multigrid-mapf-v0")
         env = gym.make(
             "gym_multigrid:multigrid-mapf-v0",
@@ -22,7 +22,7 @@ def main():
             # agent_file_path="gym_multigrid/envs/maps/agents_10x10_2.txt",
             # task_file_path="gym_multigrid/envs/maps/tasks_10x10_2.txt",
             # scenario_file="/city.domain/paris_200.json",
-            scenario_file="/home/vineet/competition/Start-Kit/example_problems/warehouse.domain/warehouse_small_10.json",
+            scenario_file="envs/mingrid-envs/warehouse.domain/warehouse_small_10.json",
         )
 
     _ = env.reset()

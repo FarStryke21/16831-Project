@@ -1016,6 +1016,9 @@ class MultiGridEnv(gym.Env):
                 for i in range(len(self.agents))
             ]
         obs = [self.objects.normalize_obs * ob for ob in obs]
+        # Convert obs to numpy array
+        # obs = np.array(obs)
+        # info_dict = {"agent_pos": [a.pos for a in self.agents]}
         return obs
 
     def seed(self, seed=1337):

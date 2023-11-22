@@ -9,12 +9,13 @@ from pathlib import Path
 from pprint import pprint
 from typing import Any, Callable, Dict, List, Optional, Tuple, Union
 
-import gymnasium as gym
+import gym as gym
+# import gym
 import numpy as np
 import optuna
 import torch as th
 import yaml
-from gymnasium import spaces
+from gym import spaces
 from huggingface_sb3 import EnvironmentName
 from optuna.pruners import BasePruner, MedianPruner, NopPruner, SuccessiveHalvingPruner
 from optuna.samplers import BaseSampler, RandomSampler, TPESampler
@@ -240,6 +241,7 @@ class ExperimentManager:
             model.learn(self.n_timesteps, **kwargs)
         except KeyboardInterrupt:
             # this allows to save the model when interrupting training
+            # print(f"Error during training: {e}")
             pass
         finally:
             # Clean progress bar

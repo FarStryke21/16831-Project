@@ -5,7 +5,8 @@ import os
 import time
 import uuid
 
-import gymnasium as gym
+import gym as gym
+# import gym
 import numpy as np
 import stable_baselines3 as sb3
 import torch as th
@@ -19,8 +20,8 @@ from rl_zoo3.utils import ALGOS, StoreDict
 
 def train() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--algo", help="RL Algorithm", default="ppo", type=str, required=False, choices=list(ALGOS.keys()))
-    parser.add_argument("--env", type=str, default="CartPole-v1", help="environment ID")
+    parser.add_argument("--algo", help="RL Algorithm", default="a2c", type=str, required=False, choices=list(ALGOS.keys()))
+    parser.add_argument("--env", type=str, default="multigrid-mapf-v0", help="environment ID")
     parser.add_argument("-tb", "--tensorboard-log", help="Tensorboard log dir", default="", type=str)
     parser.add_argument("-i", "--trained-agent", help="Path to a pretrained agent to continue training", default="", type=str)
     parser.add_argument(

@@ -2,7 +2,7 @@ multigrid-mapf-v0:
   # normalize: true
   # n_envs: 4
   n_timesteps: !!float 2e6
-  # policy: 'MlpPolicy'
+  policy: 'MlpPolicy'
   # ent_coef: 0.0
   # max_grad_norm: 0.5
   n_steps: 8
@@ -12,7 +12,7 @@ multigrid-mapf-v0:
   use_rms_prop: True
   normalize_advantage: False
   learning_rate: lin_0.00096
-  use_sde: True  
+  # use_sde: True  
   # policy_kwargs: "dict(log_std_init=-2, ortho_init=False)"
 
 atari:
