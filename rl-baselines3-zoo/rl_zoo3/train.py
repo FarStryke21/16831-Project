@@ -5,7 +5,7 @@ import os
 import time
 import uuid
 
-import gym as gym
+import gymnasium as gym
 # import gym
 import numpy as np
 import stable_baselines3 as sb3

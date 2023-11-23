@@ -9,13 +9,13 @@ from pathlib import Path
 from pprint import pprint
 from typing import Any, Callable, Dict, List, Optional, Tuple, Union
 
-import gym as gym
+import gymnasium as gym
 # import gym
 import numpy as np
 import optuna
 import torch as th
 import yaml
-from gym import spaces
+from gymnasium import spaces
 from huggingface_sb3 import EnvironmentName
 from optuna.pruners import BasePruner, MedianPruner, NopPruner, SuccessiveHalvingPruner
 from optuna.samplers import BaseSampler, RandomSampler, TPESampler

@@ -1,9 +1,9 @@
 import math
-import gym
+import gymnasium
 from enum import IntEnum
 import numpy as np
-from gym import error, spaces, utils
-from gym.utils import seeding
+from gymnasium import error, spaces, utils
+from gymnasium.utils import seeding
 from .rendering import *
 from .window import Window
 import numpy as np
@@ -910,7 +910,7 @@ class MineActions:
     build = 4
 
 
-class MultiGridEnv(gym.Env):
+class MultiGridEnv(gymnasium.Env):
     """
     2D grid world game environment
     """

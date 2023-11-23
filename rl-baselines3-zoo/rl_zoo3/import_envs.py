@@ -1,9 +1,9 @@
 from typing import Callable, Optional
 
-# import gymnasium as gym
-# from gymnasium.envs.registration import register
-from gym.envs.registration import register
-import gym
+import gymnasium as gym
+from gymnasium.envs.registration import register
+# from gym.envs.registration import register
+# import gym
 
 from rl_zoo3.wrappers import MaskVelocityWrapper
 
