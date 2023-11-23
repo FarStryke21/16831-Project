@@ -239,9 +239,9 @@ class ExperimentManager:
 
         try:
             model.learn(self.n_timesteps, **kwargs)
-        except KeyboardInterrupt:
+        except Exception as e:
             # this allows to save the model when interrupting training
-            # print(f"Error during training: {e}")
+            print(f"Error during training: {e}")
             pass
         finally:
             # Clean progress bar
