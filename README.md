@@ -13,6 +13,14 @@ It is recomended that you create a python virtual environment and install the fo
 2. `cd ..`
 3. `cd rl-baselines3-zoo/ && pip install -e . && pip install -r requirements.txt`
 
+If you face any errors while install box2d run the following - 
+```
+sudo apt install swig
+```
+
+```
+pip install -r requirements.txt
+```
 
 How to train:
 
