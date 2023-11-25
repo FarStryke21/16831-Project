@@ -80,15 +80,14 @@ def enjoy() -> None:  # noqa: C901
         importlib.import_module(env_module)
 
     env_name: EnvironmentName = args.env
-    algo = args.algo
+    # algo = args.algo
     folder = args.folder
 
     # -------------------------------------------------------------
-
+    algo = "ppo"
     load_best = True
     exp_id = 2
     folder = ""  # absolute path to the folder containing the model (the trained-models/ folder)
-
     # -------------------------------------------------------------
 
     try:
