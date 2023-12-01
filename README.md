@@ -29,7 +29,9 @@ cd to the  `rl-baselines3-zoo` repository and run the following command:
 ```
 python3 train.py --env multigrid-mapf-v0 -lb ./logs/ppo/ --algo ppo --env-kwargs scenario_file:\'/home/vineet/competition/Start-Kit/example_problems/warehouse.domain/warehouse_small_10.json\'
 ```
-
+```
+python3 train.py -tb ./logs/ppo/ --env multigrid-mapf-v0 --conf-file ./hyperparams/python/ppo_cnn_config.py --algo ppo --env-kwargs scenario_file:\'/home/admin/multi-agent-rl/Start-Kit/example_problems/warehouse.domain/warehouse_small_10.json\' agent_view_size:40
+```
 #### How to update training params:
 
 The training params are located in the `hyperparams` folder in `rl-baselines3-zoo` directory - you can update the params for the algorithm being used here.
