@@ -28,6 +28,7 @@ hyperparams = {
             log_std_init=-2,
             ortho_init=False,
             activation_fn=torch.nn.GELU,
+            squash_output=True,
             # net_arch=dict(pi=[256], vf=[256]),
         ),
     )
