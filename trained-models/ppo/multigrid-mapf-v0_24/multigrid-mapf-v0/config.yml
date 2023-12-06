@@ -1,0 +1,39 @@
+!!python/object/apply:collections.OrderedDict
+- - - batch_size
+    - 128
+  - - clip_range
+    - 0.2
+  - - ent_coef
+    - 0.0
+  - - env_wrapper
+    - - gym_multigrid.envs.mapf_env.StackMultiGridObsWrapper: {}
+  - - gae_lambda
+    - 0.95
+  - - gamma
+    - 0.9999
+  - - learning_rate
+    - 0.00025
+  - - max_grad_norm
+    - 5
+  - - n_envs
+    - 8
+  - - n_epochs
+    - 10
+  - - n_steps
+    - 512
+  - - n_timesteps
+    - 200000.0
+  - - policy
+    - CnnPolicy
+  - - policy_kwargs
+    - activation_fn: !!python/name:torch.nn.modules.activation.GELU ''
+      features_extractor_class: !!python/name:gym_multigrid.envs.mapf_env.CustomCnnFeatureExtractor ''
+      features_extractor_kwargs:
+        dropout: 0.1
+        features_dim: 128
+      log_std_init: -2
+      ortho_init: true
+  - - use_sde
+    - true
+  - - vf_coef
+    - 0.19
