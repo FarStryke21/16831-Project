@@ -1,12 +1,55 @@
-# 16831-Project
+### multi-agent-rl
+
+Cloning Steps:
+```
+git clone --recursive -j8 git@github.com:VineetTambe/multi-agent-rl.git
+```
+
+#### Installation steps:
+
+It is recomended that you create a python virtual environment and install the following packages.
+
+1. `cd gym-multigrid/ && pip install -e .`
+2. `cd ..`
+3. `cd rl-baselines3-zoo/ && pip install -e . && pip install -r requirements.txt`
+
+If you face any errors while install box2d run the following - 
+```
+sudo apt install swig
+```
 
 ```
-cd rl-baseline3-zoo
-python train.py
+pip install -r requirements.txt
 ```
 
-Execution is similar to the individual repositories. Call the train script in the root folder of rl-baseline-zoo to start training on the warehouse domain small map of 10 agents. The scenario file can be updated in the mapf_env script of multigrid folder.
+#### How to train:
 
-The default arguements of train have been set to a2c algo and the MAPF environment. The hyperparams folder has the a2c.yml file which houses the hyperparametes for a2c being used on MAPF. The current values for the hyperparams are dummy values and need to be updated. Similar params need to be added for all other implementations we are interested in (PPO, etc.).
+cd to the  `rl-baselines3-zoo` repository and run the following command:
 
-RL-baseline-zoo had an error in the reset call of the environment because it expected the seed argument. For now, I have downgraded rl-baseline-zoo to work with gym instead of gymnasium. When the train script is called, you can expect a ValueError originating from the reset function of multigrid.
+```
+python3 train.py --env multigrid-mapf-v0 -lb ./logs/ppo/ --algo ppo --env-kwargs scenario_file:\'/home/vineet/competition/Start-Kit/example_problems/warehouse.domain/warehouse_small_10.json\'
+```
+
+#### How to update training params:
+
+The training params are located in the `hyperparams` folder in `rl-baselines3-zoo` directory - you can update the params for the algorithm being used here.
+
+#### Use the following file to run the model with other python code:
+
+cd to the  `rl-baselines3-zoo` repository and run the following command:
+
+You will have to modify the following lines `87 - 90`
+The model.predict code is at `215 - 225`
+
+```
+python3 custom_runner.py
+```
+
+#### How to run stand alone:
+
+cd to the  `rl-baselines3-zoo` repository and run the following command:
+
+```
+python3 enjoy.py --env multigrid-mapf-v0 --algo ppo --env-kwargs scenario_file:\'/home/vineet/competition/Start-Kit/example_problems/warehouse.domain/warehouse_small_10.json\' -f logs/ --exp-id 2 --load-best
+
+```

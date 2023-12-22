@@ -20,12 +20,20 @@ max-complexity = 15
 [tool.black]
 line-length = 127
 
+
+[tool.pytype]
+inputs = ["."]
+exclude = ["tests/dummy_env"]
+# disable = []
+
 [tool.mypy]
 ignore_missing_imports = true
 follow_imports = "silent"
 show_error_codes = true
 exclude = """(?x)(
-    tests/dummy_env/*$
+    rl_zoo3/hyperparams_opt.py$
+    | rl_zoo3/exp_manager.py$
+    | tests/dummy_env/*$
   )"""
 
 [tool.pytest.ini_options]
